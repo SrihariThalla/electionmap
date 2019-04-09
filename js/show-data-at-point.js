@@ -15,7 +15,8 @@ function showDataAtPoint (map, e) {
   console.log('showDataAtPoint', tilequeryURL);
 
   map.flyTo({
-    center: [e.lngLat.lng, e.lngLat.lat]
+    center: [e.lngLat.lng, e.lngLat.lat],
+    zoom: 6,
   })
 
   // Add a loading spinner to the infoPanel while we fetch data
