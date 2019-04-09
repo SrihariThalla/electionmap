@@ -210,6 +210,8 @@ function locateUser(map) {
       return
     }
 
+    console.log('Browser Geolocation success', lngLat);
+
     showDataAtPoint(map, {
       lngLat: lngLat
     })
@@ -260,6 +262,7 @@ function locateUser(map) {
       })
   }, 2000)
 }
+
 },{"./add-marker":2,"./show-data-at-point":9}],8:[function(require,module,exports){
 if (typeof Object.assign != 'function') {
   console.log('This polyfill for Object.assign command is being run in a browser that has an incompatibility issue. See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/assign#Browser_compatibility .');
@@ -306,6 +309,8 @@ function showDataAtPoint (map, e) {
   Markers.addMarker(map, e);
   
   const tilequeryURL = getTilequeryURL(e.lngLat)
+
+  console.log('showDataAtPoint', tilequeryURL);
 
   map.flyTo({
     center: [e.lngLat.lng, e.lngLat.lat]
@@ -360,4 +365,5 @@ function showDataAtPoint (map, e) {
       document.getElementById('infoPanel').innerHTML = `Error while fetching data for that location`;
     })
 }
+
 },{"./ECILookup":1,"./add-marker":2,"./get-tilequery-url":5,"./object-assign-polyfill":8}]},{},[6]);

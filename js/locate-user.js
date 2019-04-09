@@ -29,6 +29,8 @@ function locateUser(map) {
       return
     }
 
+    console.log('Browser Geolocation success', lngLat);
+
     showDataAtPoint(map, {
       lngLat: lngLat
     })
