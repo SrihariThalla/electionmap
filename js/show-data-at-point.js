@@ -12,6 +12,8 @@ function showDataAtPoint (map, e) {
   
   const tilequeryURL = getTilequeryURL(e.lngLat)
 
+  console.log('showDataAtPoint', tilequeryURL);
+
   map.flyTo({
     center: [e.lngLat.lng, e.lngLat.lat]
   })
